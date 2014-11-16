@@ -1,5 +1,8 @@
 http://beagleboard.org/Support/bone101
+--> do not interfere with eMMC or HDMI Pins!
 
 P9, PIN42, 	UART3_TXD, 	SysREN S1, 		BBB TX-Only UART,
 P8, PIN19, 	EHRPWM2A, 	Servo Motor, 	PWM Steering Control,
 P9, PIN25, 	GPIO_117, 	AM2301, 		Temp / Humidity Sensor,
+P9, PIN11, 	UART4_RXD, 	URM37 PIN9, 	URM37 TX to BBB RX
+P9, PIN13, 	UART4_TXD, 	URM37 PIN8, 	BBB TX to URM37 RX
