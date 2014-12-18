@@ -1,0 +1,35 @@
+login as: ubuntu
+ubuntu@192.168.7.2's password:
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.8.13-bone56 armv7l)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Wed Dec 10 20:38:34 2014 from 192.168.7.1
+
+ubuntu@arm:~$ sudo minicom -s
+minicom: cannot open /dev/ttyO2: No such file or directory
+ubuntu@arm:~$ cannot open /dev/ttyO2: No such file or directory
+-bash: cannot: command not found
+
+ubuntu@arm:~$ cd /dev
+
+ubuntu@arm:/dev$ ls
+alarm            i2c-0         loop6               pts     rtc     tty19  tty36  tty53   ttyS2     vcsa2
+ashmem           i2c-1         loop7               ram0    rtc0    tty2   tty37  tty54   ttyS3     vcsa3
+audio            input         mapper              ram1    shm     tty20  tty38  tty55   ubi_ctrl  vcsa4
+autofs           kmem          mem                 ram10   snd     tty21  tty39  tty56   uinput    vcsa5
+binder           kmsg          mixer               ram11   stderr  tty22  tty4   tty57   urandom   vcsa6
+block            log           mmcblk0             ram12   stdin   tty23  tty40  tty58   usbmon0   vcsa7
+btrfs-control    log_events    mmcblk0p1           ram13   stdout  tty24  tty41  tty59   usbmon1   vcsa8
+bus              log_main      mmcblk1             ram14   tty     tty25  tty42  tty6    usbmon2   watchdog
+char             log_radio     mmcblk1boot0        ram15   tty0    tty26  tty43  tty60   vcs       watchdog0
+console          log_system    mmcblk1boot1        ram2    tty1    tty27  tty44  tty61   vcs1      zero
+core             logibone      mmcblk1p1           ram3    tty10   tty28  tty45  tty62   vcs2
+cpu_dma_latency  logibone_mem  mmcblk1p2           ram4    tty11   tty29  tty46  tty63   vcs3
+disk             loop-control  net                 ram5    tty12   tty3   tty47  tty7    vcs4
+dri              loop0         network_latency     ram6    tty13   tty30  tty48  tty8    vcs5
+dsp              loop1         network_throughput  ram7    tty14   tty31  tty49  tty9    vcs6
+fb0              loop2         null                ram8    tty15   tty32  tty5   ttyGS0  vcs7
+fd               loop3         ppp                 ram9    tty16   tty33  tty50  ttyO0   vcs8
+full             loop4         psaux               random  tty17   tty34  tty51  ttyS0   vcsa
+fuse             loop5         ptmx                rfkill  tty18   tty35  tty52  ttyS1   vcsa1
+ubuntu@arm:/dev$
