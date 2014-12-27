@@ -1,0 +1,58 @@
+login as: ubuntu
+ubuntu@192.168.0.10's password:
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.8.13-bone56 armv7l)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Sun Dec 21 21:33:52 2014 from 192.168.0.2
+ubuntu@arm:~$ ipw2100-1.3-p.fw             ttusb-budget
+-bash: ipw2100-1.3-p.fw: command not found
+ubuntu@arm:~$ echo ttyO1_armhf.com > /sys/devices/bone_capemgr*/slots
+-bash: /sys/devices/bone_capemgr.9/slots: Permission denied
+ubuntu@arm:~$ sudo echo ttyO1_armhf.com > /sys/devices/bone_capemgr*/slots
+-bash: /sys/devices/bone_capemgr.9/slots: Permission denied
+ubuntu@arm:~$ sudo echo ttyO1_armhf.com > /sys/devices/bone_capemgr*/slots/
+-bash: /sys/devices/bone_capemgr*/slots/: No such file or directory
+ubuntu@arm:~$ sudo nano /sys/devices/bone_capemgr*/slots
+[sudo] password for ubuntu:
+  GNU nano 2.2.6      File: /sys/devices/bone_capemgr.9/slots
+
+ 0: 54:PF---
+ 1: 55:PF---
+ 2: 56:PF---
+ 3: 57:PF---
+ 4: ff:P-O-L Bone-LT-eMMC-2G,00A0,Texas Instrument,BB-BONE-EMMC-2G
+ 5: ff:P-O-L Bone-Black-HDMI,00A0,Texas Instrument,BB-BONELT-HDMI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                [ Read 6 lines ]
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Page ^K Cut Text  ^C Cur Pos
+^X Exit      ^J Justify   ^W Where Is  ^V Next Page ^U UnCut Text^T To Spell

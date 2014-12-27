@@ -1,0 +1,966 @@
+login as: ubuntu
+ubuntu@192.168.7.2's password:
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.8.13-bone56 armv7l)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Wed Dec 17 22:44:56 2014 from 192.168.7.1
+ubuntu@arm:~$ lsusb
+Bus 001 Device 002: ID 148f:5370 Ralink Technology, Corp. RT5370 Wireless Adapter
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+ubuntu@arm:~$ minicom -help
+Usage: minicom [OPTION]... [configuration]
+A terminal program for Linux and other unix-like systems.
+
+  -b, --baudrate         : set baudrate (ignore the value from config)
+  -D, --device           : set device name (ignore the value from config)
+  -s, --setup            : enter setup mode
+  -o, --noinit           : do not initialize modem & lockfiles at startup
+  -m, --metakey          : use meta or alt key for commands
+  -M, --metakey8         : use 8bit meta key for commands
+  -l, --ansi             : literal; assume screen uses non IBM-PC character set
+  -L, --iso              : don't assume screen uses ISO8859
+  -w, --wrap             : Linewrap on
+  -H, --displayhex       : display output in hex
+  -z, --statline         : try to use terminal's status line
+  -7, --7bit             : force 7bit mode
+  -8, --8bit             : force 8bit mode
+  -c, --color=on/off     : ANSI style color usage on or off
+  -a, --attrib=on/off    : use reverse or highlight attributes on or off
+  -t, --term=TERM        : override TERM environment variable
+  -S, --script=SCRIPT    : run SCRIPT at startup
+  -d, --dial=ENTRY       : dial ENTRY from the dialing directory
+  -p, --ptty=TTYP        : connect to pseudo terminal
+  -C, --capturefile=FILE : start capturing to FILE
+  -F, --statlinefmt      : format of status line
+  -R, --remotecharset    : character set of communication partner
+  -v, --version          : output version information and exit
+  -h, --help             : show help
+  configuration          : configuration file to use
+
+These options can also be specified in the MINICOM environment variable.
+This variable is currently unset.
+The configuration directory for the access file and the configurations
+is compiled to /etc/minicom.
+
+Report bugs to <minicom-devel@lists.alioth.debian.org>.
+ubuntu@arm:~$ minicom -D /dev/ttyO0
+minicom: cannot open /dev/ttyO0: Permission denied
+ubuntu@arm:~$ sudo minicom -D /dev/ttyO0
+[sudo] password for ubuntu:
+
+Welcome to minicom 2.7
+
+OPTIONS: I18n
+Compiled on Jan  1 2014, 17:08:55.
+Port /dev/ttyO0, 22:44:40
+
+Press CTRL-A Z for help on special keys
+
+
+
+
+
+The system is going down for halt NOW!
+Power button pressed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CTRL-A Z for help | 57600 8N1 | NOR | Minicom 2.7 | VT102 | Offline | ttyO0
+login as: ubuntu
+ubuntu@192.168.7.2's password:
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.8.13-bone56 armv7l)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Wed Dec 17 22:45:38 2014 from 192.168.7.1
+ubuntu@arm:~$ date
+Sat Dec 20 18:37:02 EST 2014
+ubuntu@arm:~$ sudo apt-get update
+[sudo] password for ubuntu:
+Ign http://ports.ubuntu.com trusty InRelease
+Ign http://ports.ubuntu.com trusty-updates InRelease
+Hit http://packages.namniart.com trusty InRelease
+Hit http://ports.ubuntu.com trusty Release.gpg
+Get:1 http://ports.ubuntu.com trusty-updates Release.gpg [933 B]
+Hit http://packages.namniart.com trusty/main armhf Packages
+Hit http://ports.ubuntu.com trusty Release
+Get:2 http://ports.ubuntu.com trusty-updates Release [62.0 kB]
+Ign http://packages.namniart.com trusty/main Translation-en
+Hit http://ports.ubuntu.com trusty/main Sources
+Hit http://ports.ubuntu.com trusty/universe Sources
+Hit http://ports.ubuntu.com trusty/multiverse Sources
+Hit http://ports.ubuntu.com trusty/main armhf Packages
+Hit http://ports.ubuntu.com trusty/universe armhf Packages
+Hit http://ports.ubuntu.com trusty/multiverse armhf Packages
+Hit http://ports.ubuntu.com trusty/main Translation-en
+Hit http://ports.ubuntu.com trusty/multiverse Translation-en
+Hit http://ports.ubuntu.com trusty/universe Translation-en
+Get:3 http://ports.ubuntu.com trusty-updates/main Sources [192 kB]
+Get:4 http://ports.ubuntu.com trusty-updates/universe Sources [119 kB]
+Get:5 http://ports.ubuntu.com trusty-updates/multiverse Sources [3412 B]
+Get:6 http://ports.ubuntu.com trusty-updates/main armhf Packages [437 kB]
+Get:7 http://ports.ubuntu.com trusty-updates/universe armhf Packages [294 kB]
+Get:8 http://ports.ubuntu.com trusty-updates/multiverse armhf Packages [7964 B]
+Get:9 http://ports.ubuntu.com trusty-updates/main Translation-en [224 kB]
+Hit http://ports.ubuntu.com trusty-updates/multiverse Translation-en
+Get:10 http://ports.ubuntu.com trusty-updates/universe Translation-en [147 kB]
+Fetched 1486 kB in 26s (56.4 kB/s)
+Reading package lists... Done
+ubuntu@arm:~$ sudo apt-get upgrade
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  libdrm-nouveau2 libdrm-radeon1 libdrm2
+3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 53.1 kB of archives.
+After this operation, 8192 B disk space will be freed.
+Do you want to continue? [Y/n] Y
+Get:1 http://ports.ubuntu.com/ubuntu-ports/ trusty-updates/main libdrm2 armhf 2.4.56-1~ubuntu1 [19.4 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports/ trusty-updates/main libdrm-nouveau2 armhf 2.4.56-1~ubuntu1 [13.5 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports/ trusty-updates/main libdrm-radeon1 armhf 2.4.56-1~ubuntu1 [20.2 kB]
+Fetched 53.1 kB in 0s (66.3 kB/s)
+(Reading database ... 54676 files and directories currently installed.)
+Preparing to unpack .../libdrm2_2.4.56-1~ubuntu1_armhf.deb ...
+Unpacking libdrm2:armhf (2.4.56-1~ubuntu1) over (2.4.52-1) ...
+Preparing to unpack .../libdrm-nouveau2_2.4.56-1~ubuntu1_armhf.deb ...
+Unpacking libdrm-nouveau2:armhf (2.4.56-1~ubuntu1) over (2.4.52-1) ...
+Preparing to unpack .../libdrm-radeon1_2.4.56-1~ubuntu1_armhf.deb ...
+Unpacking libdrm-radeon1:armhf (2.4.56-1~ubuntu1) over (2.4.52-1) ...
+Setting up libdrm2:armhf (2.4.56-1~ubuntu1) ...
+Setting up libdrm-nouveau2:armhf (2.4.56-1~ubuntu1) ...
+Setting up libdrm-radeon1:armhf (2.4.56-1~ubuntu1) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.4) ...
+ubuntu@arm:~$ clear
+ubuntu@arm:~$ sudo apt-get update
+Ign http://ports.ubuntu.com trusty InRelease
+Hit http://packages.namniart.com trusty InRelease
+Ign http://ports.ubuntu.com trusty-updates InRelease
+Hit http://ports.ubuntu.com trusty Release.gpg
+Hit http://packages.namniart.com trusty/main armhf Packages
+Hit http://ports.ubuntu.com trusty-updates Release.gpg
+Hit http://ports.ubuntu.com trusty Release
+Hit http://ports.ubuntu.com trusty-updates Release
+Hit http://ports.ubuntu.com trusty/main Sources
+Ign http://packages.namniart.com trusty/main Translation-en
+Hit http://ports.ubuntu.com trusty/universe Sources
+Hit http://ports.ubuntu.com trusty/multiverse Sources
+Hit http://ports.ubuntu.com trusty/main armhf Packages
+Hit http://ports.ubuntu.com trusty/universe armhf Packages
+Hit http://ports.ubuntu.com trusty/multiverse armhf Packages
+Hit http://ports.ubuntu.com trusty/main Translation-en
+Hit http://ports.ubuntu.com trusty/multiverse Translation-en
+Hit http://ports.ubuntu.com trusty/universe Translation-en
+Hit http://ports.ubuntu.com trusty-updates/main Sources
+Hit http://ports.ubuntu.com trusty-updates/universe Sources
+Hit http://ports.ubuntu.com trusty-updates/multiverse Sources
+Hit http://ports.ubuntu.com trusty-updates/main armhf Packages
+Hit http://ports.ubuntu.com trusty-updates/universe armhf Packages
+Hit http://ports.ubuntu.com trusty-updates/multiverse armhf Packages
+Hit http://ports.ubuntu.com trusty-updates/main Translation-en
+Hit http://ports.ubuntu.com trusty-updates/multiverse Translation-en
+Hit http://ports.ubuntu.com trusty-updates/universe Translation-en
+Reading package lists... Done
+ubuntu@arm:~$ apt-get install device-tree-compiler
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+ubuntu@arm:~$ sudo apt-get install device-tree-compiler
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  device-tree-compiler
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 350 kB of archives.
+After this operation, 475 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports/ trusty/main device-tree-compiler armhf 1.4.0+dfsg-1 [350 kB]
+Fetched 350 kB in 1s (247 kB/s)
+Selecting previously unselected package device-tree-compiler.
+(Reading database ... 54675 files and directories currently installed.)
+Preparing to unpack .../device-tree-compiler_1.4.0+dfsg-1_armhf.deb ...
+Unpacking device-tree-compiler (1.4.0+dfsg-1) ...
+Setting up device-tree-compiler (1.4.0+dfsg-1) ...
+ubuntu@arm:~$ sudo apt-get install python build-essential
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+build-essential is already the newest version.
+python is already the newest version.
+python set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+ubuntu@arm:~$ sudo apt-get update
+Ign http://ports.ubuntu.com trusty InRelease
+Hit http://packages.namniart.com trusty InRelease
+Ign http://ports.ubuntu.com trusty-updates InRelease
+Hit http://ports.ubuntu.com trusty Release.gpg
+Hit http://packages.namniart.com trusty/main armhf Packages
+Hit http://ports.ubuntu.com trusty-updates Release.gpg
+Hit http://ports.ubuntu.com trusty Release
+Hit http://ports.ubuntu.com trusty-updates Release
+Ign http://packages.namniart.com trusty/main Translation-en
+Hit http://ports.ubuntu.com trusty/main Sources
+Hit http://ports.ubuntu.com trusty/universe Sources
+Hit http://ports.ubuntu.com trusty/multiverse Sources
+Hit http://ports.ubuntu.com trusty/main armhf Packages
+Hit http://ports.ubuntu.com trusty/universe armhf Packages
+Hit http://ports.ubuntu.com trusty/multiverse armhf Packages
+Hit http://ports.ubuntu.com trusty/main Translation-en
+Hit http://ports.ubuntu.com trusty/multiverse Translation-en
+Hit http://ports.ubuntu.com trusty/universe Translation-en
+Hit http://ports.ubuntu.com trusty-updates/main Sources
+Hit http://ports.ubuntu.com trusty-updates/universe Sources
+Hit http://ports.ubuntu.com trusty-updates/multiverse Sources
+Hit http://ports.ubuntu.com trusty-updates/main armhf Packages
+Hit http://ports.ubuntu.com trusty-updates/universe armhf Packages
+Hit http://ports.ubuntu.com trusty-updates/multiverse armhf Packages
+Hit http://ports.ubuntu.com trusty-updates/main Translation-en
+Hit http://ports.ubuntu.com trusty-updates/multiverse Translation-en
+Hit http://ports.ubuntu.com trusty-updates/universe Translation-en
+Reading package lists... Done
+ubuntu@arm:~$ sudo apt-get install build-essential python-dev python-setuptools python-pip python-smbus -y
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+build-essential is already the newest version.
+python-dev is already the newest version.
+python-setuptools is already the newest version.
+python-pip is already the newest version.
+python-smbus is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+ubuntu@arm:~$ sudo pip install Adafruit_BBIO
+Downloading/unpacking Adafruit-BBIO
+  Downloading Adafruit_BBIO-0.0.20.tar.gz
+  Running setup.py (path:/tmp/pip_build_root/Adafruit-BBIO/setup.py) egg_info for package Adafruit-BBIO
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+
+Installing collected packages: Adafruit-BBIO
+  Running setup.py install for Adafruit-BBIO
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    dtc: invalid option -- '@'
+    Usage: dtc [options] <input file>
+
+    Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+      -q, --quiet
+        Quiet: -q suppress warnings, -qq errors, -qqq all
+      -I, --in-format <arg>
+        Input formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                fs  - /proc/device-tree style directory
+      -o, --out <arg>
+        Output file
+      -O, --out-format <arg>
+        Output formats are:
+                dts - device tree source text
+                dtb - device tree blob
+                asm - assembler source
+      -V, --out-version <arg>
+        Blob version to produce, defaults to %d (for dtb and asm output)
+      -d, --out-dependency <arg>
+        Output dependency file
+      -R, --reserve <arg>
+        tMake space for <number> reserve map entries (for dtb and asm output)
+      -S, --space <arg>
+        Make the blob at least <bytes> long (extra space)
+      -p, --pad <arg>
+        Add padding to the blob of <bytes> long (extra space)
+      -b, --boot-cpu <arg>
+        Set the physical boot cpu
+      -f, --force
+        Try to produce output even if the input tree has errors
+      -i, --include <arg>
+        Add a path to search for include files
+      -s, --sort
+        Sort nodes and properties before outputting (useful for comparing trees)
+      -H, --phandle <arg>
+        Valid phandle formats are:
+                legacy - "linux,phandle" properties only
+                epapr  - "phandle" properties only
+                both   - Both "linux,phandle" and "phandle" properties
+      -W, --warning <arg>
+        Enable/disable warnings (prefix with "no-")
+      -E, --error <arg>
+        Enable/disable errors (prefix with "no-")
+      -h, --help
+        Print this help and exit
+      -v, --version
+        Print version and exit
+
+    Error: unknown option
+    building 'Adafruit_BBIO.GPIO' extension
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/py_gpio.c -o build/temp.linux-armv7l-2.7/source/py_gpio.o
+    source/py_gpio.c:36:18: warning: 'bb_revision' defined but not used [-Wunused-variable]
+     static PyObject *bb_revision;
+                      ^
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/event_gpio.c -o build/temp.linux-armv7l-2.7/source/event_gpio.o
+    source/event_gpio.c: In function 'gpio_export':
+    source/event_gpio.c:87:10: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+         write(fd, str_gpio, len);
+              ^
+    source/event_gpio.c: In function 'gpio_unexport':
+    source/event_gpio.c:195:10: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+         write(fd, str_gpio, len);
+              ^
+    source/event_gpio.c: In function 'gpio_set_direction':
+    source/event_gpio.c:235:14: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+             write(fd, direction, strlen(direction));
+                  ^
+    source/event_gpio.c: In function 'gpio_get_direction':
+    source/event_gpio.c:251:9: warning: ignoring return value of 'read', declared with attribute warn_unused_result [-Wunused-result]
+         read(fd, &direction, sizeof(direction) - 1);
+             ^
+    source/event_gpio.c: In function 'gpio_set_value':
+    source/event_gpio.c:279:10: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+         write(fd, vstr, strlen(vstr));
+              ^
+    source/event_gpio.c: In function 'gpio_get_value':
+    source/event_gpio.c:296:9: warning: ignoring return value of 'read', declared with attribute warn_unused_result [-Wunused-result]
+         read(fd, &ch, sizeof(ch));
+             ^
+    source/event_gpio.c: In function 'gpio_set_edge':
+    source/event_gpio.c:317:14: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+             write(fd, stredge[edge], strlen(stredge[edge]) + 1);
+                  ^
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/constants.c -o build/temp.linux-armv7l-2.7/source/constants.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/common.c -o build/temp.linux-armv7l-2.7/source/common.o
+    source/common.c: In function 'load_device_tree':
+    source/common.c:385:5: warning: format not a string literal and no format arguments [-Wformat-security]
+         fprintf(file, name);
+         ^
+    arm-linux-gnueabihf-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -D_FORTIFY_SOURCE=2 -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security build/temp.linux-armv7l-2.7/source/py_gpio.o build/temp.linux-armv7l-2.7/source/event_gpio.o build/temp.linux-armv7l-2.7/source/constants.o build/temp.linux-armv7l-2.7/source/common.o -o build/lib.linux-armv7l-2.7/Adafruit_BBIO/GPIO.so
+    building 'Adafruit_BBIO.PWM' extension
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/py_pwm.c -o build/temp.linux-armv7l-2.7/source/py_pwm.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/c_pwm.c -o build/temp.linux-armv7l-2.7/source/c_pwm.o
+    source/c_pwm.c: In function 'pwm_set_frequency':
+    source/c_pwm.c:100:14: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+             write(pwm->period_fd, buffer, len);
+                  ^
+    source/c_pwm.c: In function 'pwm_set_polarity':
+    source/c_pwm.c:118:10: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+         write(pwm->polarity_fd, buffer, len);
+              ^
+    source/c_pwm.c: In function 'pwm_set_duty_cycle':
+    source/c_pwm.c:140:10: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
+         write(pwm->duty_fd, buffer, len);
+              ^
+    source/c_pwm.c: In function 'pwm_start':
+    source/c_pwm.c:204:17: warning: array subscript is above array bounds [-Warray-bounds]
+         new_pwm->key[KEYLEN+1] = '\0'; /* terminate string */
+                     ^
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/constants.c -o build/temp.linux-armv7l-2.7/source/constants.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/common.c -o build/temp.linux-armv7l-2.7/source/common.o
+    source/common.c: In function 'load_device_tree':
+    source/common.c:385:5: warning: format not a string literal and no format arguments [-Wformat-security]
+         fprintf(file, name);
+         ^
+    arm-linux-gnueabihf-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -D_FORTIFY_SOURCE=2 -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security build/temp.linux-armv7l-2.7/source/py_pwm.o build/temp.linux-armv7l-2.7/source/c_pwm.o build/temp.linux-armv7l-2.7/source/constants.o build/temp.linux-armv7l-2.7/source/common.o -o build/lib.linux-armv7l-2.7/Adafruit_BBIO/PWM.so
+    building 'Adafruit_BBIO.ADC' extension
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/py_adc.c -o build/temp.linux-armv7l-2.7/source/py_adc.o
+    source/py_adc.c:30:18: warning: 'py_cleanup' defined but not used [-Wunused-function]
+     static PyObject *py_cleanup(PyObject *self, PyObject *args)
+                      ^
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/c_adc.c -o build/temp.linux-armv7l-2.7/source/c_adc.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/constants.c -o build/temp.linux-armv7l-2.7/source/constants.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/common.c -o build/temp.linux-armv7l-2.7/source/common.o
+    source/common.c: In function 'load_device_tree':
+    source/common.c:385:5: warning: format not a string literal and no format arguments [-Wformat-security]
+         fprintf(file, name);
+         ^
+    arm-linux-gnueabihf-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -D_FORTIFY_SOURCE=2 -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security build/temp.linux-armv7l-2.7/source/py_adc.o build/temp.linux-armv7l-2.7/source/c_adc.o build/temp.linux-armv7l-2.7/source/constants.o build/temp.linux-armv7l-2.7/source/common.o -o build/lib.linux-armv7l-2.7/Adafruit_BBIO/ADC.so
+    building 'Adafruit_BBIO.SPI' extension
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/spimodule.c -o build/temp.linux-armv7l-2.7/source/spimodule.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/constants.c -o build/temp.linux-armv7l-2.7/source/constants.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/common.c -o build/temp.linux-armv7l-2.7/source/common.o
+    source/common.c: In function 'load_device_tree':
+    source/common.c:385:5: warning: format not a string literal and no format arguments [-Wformat-security]
+         fprintf(file, name);
+         ^
+    arm-linux-gnueabihf-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -D_FORTIFY_SOURCE=2 -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security build/temp.linux-armv7l-2.7/source/spimodule.o build/temp.linux-armv7l-2.7/source/constants.o build/temp.linux-armv7l-2.7/source/common.o -o build/lib.linux-armv7l-2.7/Adafruit_BBIO/SPI.so
+    building 'Adafruit_BBIO.UART' extension
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/py_uart.c -o build/temp.linux-armv7l-2.7/source/py_uart.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/c_uart.c -o build/temp.linux-armv7l-2.7/source/c_uart.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/constants.c -o build/temp.linux-armv7l-2.7/source/constants.o
+    arm-linux-gnueabihf-gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c source/common.c -o build/temp.linux-armv7l-2.7/source/common.o
+    source/common.c: In function 'load_device_tree':
+    source/common.c:385:5: warning: format not a string literal and no format arguments [-Wformat-security]
+         fprintf(file, name);
+         ^
+    arm-linux-gnueabihf-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -D_FORTIFY_SOURCE=2 -g -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security build/temp.linux-armv7l-2.7/source/py_uart.o build/temp.linux-armv7l-2.7/source/c_uart.o build/temp.linux-armv7l-2.7/source/constants.o build/temp.linux-armv7l-2.7/source/common.o -o build/lib.linux-armv7l-2.7/Adafruit_BBIO/UART.so
+
+Successfully installed Adafruit-BBIO
+Cleaning up...
+ubuntu@arm:~$
