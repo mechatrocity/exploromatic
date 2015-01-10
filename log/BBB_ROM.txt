@@ -1,0 +1,70 @@
+login as: ubuntu
+ubuntu@192.168.1.121's password:
+Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.8.13-bone56 armv7l)
+ * Documentation:  https://help.ubuntu.com/
+Last login: Thu Jan  8 19:56:51 2015 from super
+
+ubuntu@arm:~$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/mmcblk1p2   1715936 1630416         0 100% /
+none                   4       0         4   0% /sys/fs/cgroup
+udev              252512       4    252508   1% /dev
+tmpfs              50852     276     50576   1% /run
+none                5120       0      5120   0% /run/lock
+none              254248       0    254248   0% /run/shm
+none              102400       0    102400   0% /run/user
+/dev/mmcblk1p1     98094   90226      7868  92% /boot/uboot
+overflow            1024       0      1024   0% /tmp
+
+ubuntu@arm:~$ lsblk
+NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+mmcblk1boot0 179:16   0     1M  1 disk
+mmcblk1boot1 179:24   0     1M  1 disk
+mmcblk0      179:0    0  29.5G  0 disk
+`-mmcblk0p1  179:1    0  29.5G  0 part
+mmcblk1      179:8    0   1.8G  0 disk
+|-mmcblk1p1  179:9    0    96M  0 part /boot/uboot
+`-mmcblk1p2  179:10   0   1.7G  0 part /
+
+ubuntu@arm:~$ mount | column -t
+/dev/mmcblk1p2  on  /                         type  ext4         (rw,noatime,errors=remount-ro)
+proc            on  /proc                     type  proc         (rw,noexec,nosuid,nodev)
+sysfs           on  /sys                      type  sysfs        (rw,noexec,nosuid,nodev)
+none            on  /sys/fs/cgroup            type  tmpfs        (rw)
+none            on  /sys/fs/fuse/connections  type  fusectl      (rw)
+debugfs         on  /sys/kernel/debug         type  debugfs      (rw)
+none            on  /sys/kernel/security      type  securityfs   (rw)
+udev            on  /dev                      type  devtmpfs     (rw,mode=0755)
+devpts          on  /dev/pts                  type  devpts       (rw,noexec,nosuid,gid=5,mode=0620)
+tmpfs           on  /run                      type  tmpfs        (rw,noexec,nosuid,size=10%,mode=0755)
+none            on  /run/lock                 type  tmpfs        (rw,noexec,nosuid,nodev,size=5242880)
+none            on  /run/shm                  type  tmpfs        (rw,nosuid,nodev)
+none            on  /run/user                 type  tmpfs        (rw,noexec,nosuid,nodev,size=104857600,mode=0755)
+/dev/mmcblk1p1  on  /boot/uboot               type  vfat         (rw)
+overflow        on  /tmp                      type  tmpfs        (rw,size=1048576,mode=1777)
+binfmt_misc     on  /proc/sys/fs/binfmt_misc  type  binfmt_misc  (rw,noexec,nosuid,nodev)
+
+ubuntu@arm:~$ free -m
+             total       used       free     shared    buffers     cached
+Mem:           496        164        331          0         15        114
+-/+ buffers/cache:         34        461
+Swap:            0          0          0
+
+ubuntu@arm:~$ cd /dev/
+ubuntu@arm:/dev$ ls
+alarm            dsp         log_system    mixer               ptmx   ram6    tty0   tty21  tty34  tty47  tty6    ubi_ctrl  vcsa
+ashmem           fb0         logibone      mmcblk0             pts    ram7    tty1   tty22  tty35  tty48  tty60   uinput    vcsa1
+audio            fd          logibone_mem  mmcblk0p1           ram0   ram8    tty10  tty23  tty36  tty49  tty61   urandom   vcsa2
+autofs           full        loop-control  mmcblk1             ram1   ram9    tty11  tty24  tty37  tty5   tty62   usbmon0   vcsa3
+binder           fuse        loop0         mmcblk1boot0        ram10  random  tty12  tty25  tty38  tty50  tty63   usbmon1   vcsa4
+block            i2c-0       loop1         mmcblk1boot1        ram11  rfkill  tty13  tty26  tty39  tty51  tty7    usbmon2   vcsa5
+btrfs-control    i2c-1       loop2         mmcblk1p1           ram12  rtc     tty14  tty27  tty4   tty52  tty8    vcs       vcsa6
+bus              input       loop3         mmcblk1p2           ram13  rtc0    tty15  tty28  tty40  tty53  tty9    vcs1      vcsa7
+char             kmem        loop4         net                 ram14  shm     tty16  tty29  tty41  tty54  ttyGS0  vcs2      watchdog
+console          kmsg        loop5         network_latency     ram15  snd     tty17  tty3   tty42  tty55  ttyO0   vcs3      watchdog0
+core             log         loop6         network_throughput  ram2   stderr  tty18  tty30  tty43  tty56  ttyS0   vcs4      zero
+cpu_dma_latency  log_events  loop7         null                ram3   stdin   tty19  tty31  tty44  tty57  ttyS1   vcs5
+disk             log_main    mapper        ppp                 ram4   stdout  tty2   tty32  tty45  tty58  ttyS2   vcs6
+dri              log_radio   mem           psaux               ram5   tty     tty20  tty33  tty46  tty59  ttyS3   vcs7
+
+ubuntu@arm:/dev$
