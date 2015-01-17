@@ -1,6 +1,8 @@
 % Step 1: Base Applications
 sudo apt-get update
-sudo apt-get install g++ build-essential ntptime minicom python
+sudo apt-get install g++ build-essential ntptime minicom python python-dev python-setuptools python-pip python-smbus -y
+sudo pip install Adafruit_BBIO
+
 
 % Step 2: HDD Partitions
 
