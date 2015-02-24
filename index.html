@@ -29,13 +29,17 @@
       </header>
       <section>
         <h1>
-<a id="introducting-the-explor-o-matic" class="anchor" href="#introducting-the-explor-o-matic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introducting the explor-O-matic</h1>
+<a id="introducing-the-explor-o-matic" class="anchor" href="#introducing-the-explor-o-matic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introducing the explor-O-matic</h1>
 
-<p>The explorOmatic is an autonomous RC Truck based around a Beaglebone Black and Robot Operating System (ROS).  It has no aim in particular, but serves to be a platform for experimenting.  In this vein it should have bi-directional communication and a good interface, which is accomplished through Ubuntu over a SSH connection.  The initial version of the greenOmatic will essentially be a remote-controlled RC truck with all on-board sensors constantly being updated and reported.  Lets call this version 1.0.</p>
+<p>The explorOmatic is an autonomous RC Truck based around a Beaglebone Black and Robot Operating System (ROS).  It has no aim in particular, but serves to be a platform for experimenting.  In this vein it must have bi-directional communication and a good interface, which is accomplished through Ubuntu over a SSH connection.  The initial version of the greenOmatic will essentially be a remote-controlled RC truck with all the on-board sensors constantly being updated and reported.  Lets call this version 1.0.</p>
+
+<h3>
+<a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Roadmap</h3>
 
 <p>The next version of the greenOmatic software will implement SLAM to create a precise map of the perimeter of any arbitrary indoor unit (multiple rooms).  This could be useful to real-estate businesses for verifying the layout of floor plans.</p>
 
-<p>The RC Truck has a flatbed, and a removable plastic bed lining.  An idea for a future hardware revision (once I get my RepRap up and running) is to mount a stepper / servo motor to the flatbed, and create a fixture to tilt the truck bed lining up-and-down along one axis.  Add an IMU on-board to detect the tilt of the truck bed so it can be flat, even if the truck is on a hill.  Then, attach a Model Rocket launcher to the truck bed, and wire the launcher to a relay!  A mobile model rocket launcher!</p>
+<p>The RC Truck has a flatbed and a removable plastic flatbed lining.  For a future hardware revision (once I get my RepRap up and running) a fixture will be created to mount a stepper or servo motor to the flatbed and attach the rotor to the plastic flatbed lining (or any other solid flat surface), so that the motor tilts the flatbed surface relative to the chassis.  A 6-DOF IMU will be fixed go the chassis or the moving flat bed; it's not too important which, as the tilt will be known.<br>
+Then, attach a Model Rocket launcher to the truck bed, and wire the launcher to a relay to the Beaglebone, and voila -- a mobile model rocket launcher!</p>
 
 <h2>
 <a id="current-status" class="anchor" href="#current-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current Status</h2>
