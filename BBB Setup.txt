@@ -1,12 +1,19 @@
 % Step 1: Base Applications
 sudo apt-get update
 sudo apt-get install g++ build-essential ntptime minicom python python-dev python-setuptools python-pip python-smbus -y
-sudo pip install Adafruit_BBIO pyserial
-
-% Assuming SD card is inserted and can be found as block device mmcblk0 with partition mmcblk0p1
+sudo pip install Adafruit_BBIO
 
 
-% Step 2: ROS
+% Step 2: HDD Partitions
+
+
+% Step 3: UART
+
+
+% Step 4: USB Wifi
+
+
+% Step 5: ROS
 sudo update-locale LANG=C LANGUAGE=C LC_ALL=C LC_MESSAGES=POSIX
 sudo sh -c 'echo "deb http://packages.namniart.com/repos/ros trusty main" > /etc/apt/sources.list.d/ros-latest.list'
 wget http://packages.namniart.com/repos/namniart.key -O - | sudo apt-key add -
