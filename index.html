@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Exploromatic by mechatrocity</title>
+    <title>explor-O-matic by mechatrocity</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -15,8 +15,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Exploromatic</h1>
-        <p>Beaglebone Black + ROS + 4WD RC Truck + more!</p>
+        <h1>explor-O-matic</h1>
+        <p>Beaglebone Green + ROS + 4WD RC Truck + more!</p>
 
         <p class="view"><a href="https://github.com/mechatrocity/Exploromatic">View the Project on GitHub <small>mechatrocity/Exploromatic</small></a></p>
 
@@ -29,12 +29,12 @@
       </header>
       <section>
         <h1>
-<a id="introducing-the-explor-o-matic" class="anchor" href="#introducing-the-explor-o-matic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introducing the explor-O-matic</h1>
+<a id="introducing-the-explor-o-matic" class="anchor" href="#introducing-the-explor-o-matic" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introducing the explor-O-matic</h1>
 
 <p>The explorOmatic is an autonomous RC Truck based around a Beaglebone Black and Robot Operating System (ROS).  It has no aim in particular, but serves to be a platform for experimenting.  In this vein it must have bi-directional communication and a good interface, which is accomplished through Ubuntu over a SSH connection.  The initial version of the greenOmatic will essentially be a remote-controlled RC truck with all the on-board sensors constantly being updated and reported.  Lets call this version 1.0.</p>
 
 <h3>
-<a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Roadmap</h3>
+<a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Roadmap</h3>
 
 <p>The next version of the greenOmatic software will implement SLAM to create a precise map of the perimeter of any arbitrary indoor unit (multiple rooms).  This could be useful to real-estate businesses for verifying the layout of floor plans.</p>
 
@@ -42,7 +42,7 @@
 Then, attach a Model Rocket launcher to the truck bed, and wire the launcher to a relay to the Beaglebone, and voila -- a mobile model rocket launcher!</p>
 
 <h2>
-<a id="current-status" class="anchor" href="#current-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current Status</h2>
+<a id="current-status" class="anchor" href="#current-status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Current Status</h2>
 
 <p>The Beaglebone Black is running Ubuntu 14.04, can be accessed over SSH with a Wifi connection, and ROS is installed.  For initial system integration the Chassis and Power and Propulsion systems are not in the picture.  All sensors are electrically connected.<br>
 I ran into issues getting the UART working on the Beaglebone Black to read the GPS stream, found that some Ubuntu 14.04 compilations for the BBB have UART device tree overlays, and others don't... mine didn't.</p>
@@ -50,75 +50,75 @@ I ran into issues getting the UART working on the Beaglebone Black to read the G
 <p><img src="http://mechatrocity.com/files/pics/explorOmatic_blink.gif" alt="The blinking means it's happy"></p>
 
 <h1>
-<a id="hardware" class="anchor" href="#hardware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hardware</h1>
+<a id="hardware" class="anchor" href="#hardware" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hardware</h1>
 
 <h2>
-<a id="chassis" class="anchor" href="#chassis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chassis</h2>
+<a id="chassis" class="anchor" href="#chassis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chassis</h2>
 
 <p>I got very lucky on a trip to Value village, and found this great RC truck.  It's 4-wheel-drive, has a decent suspension system, and has a pretty hefty drive motor. </p>
 
 <h2>
-<a id="power-and-propulsion" class="anchor" href="#power-and-propulsion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Power and Propulsion</h2>
+<a id="power-and-propulsion" class="anchor" href="#power-and-propulsion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Power and Propulsion</h2>
 
 <h3>
-<a id="nimh-batteries" class="anchor" href="#nimh-batteries" aria-hidden="true"><span class="octicon octicon-link"></span></a>NiMH Batteries</h3>
+<a id="nimh-batteries" class="anchor" href="#nimh-batteries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NiMH Batteries</h3>
 
 <p>...but really, any type of battery over 5V will do.  I have some old 5000mAh 8-cell NiMH batteries that are perfect.  If I was to race LiPO batteries could be used to lighten the load.</p>
 
 <h3>
-<a id="syren-10-motor-controller" class="anchor" href="#syren-10-motor-controller" aria-hidden="true"><span class="octicon octicon-link"></span></a>SyRen 10 Motor Controller</h3>
+<a id="syren-10-motor-controller" class="anchor" href="#syren-10-motor-controller" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SyRen 10 Motor Controller</h3>
 
 <p><img src="http://mechatrocity.com/files/pics/SyRen_Motor_top.jpg" alt="SyRen10 and a DC Motor for testing">
 Features bidirectional control of DC motors, regenerative breaking, multiple input types for control (Analog, PWM, Simple Serial and Packetized Serial) and even offers a high-amperage 5V power connection, which is used to provide power to the whole system!</p>
 
 <h3>
-<a id="servo-motor" class="anchor" href="#servo-motor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Servo Motor</h3>
+<a id="servo-motor" class="anchor" href="#servo-motor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Servo Motor</h3>
 
 <p>The steering motor that came with the Value Village RC Truck was of an old design I'd never seen before, 5 wire analog control but NOT a stepper, so rather than figure out how it works I swapped it out for a modern Servo.  These are quite common, PWM-driven with Ground-Power-Input connectors.</p>
 
 <h2>
-<a id="computer-and-communications" class="anchor" href="#computer-and-communications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computer and Communications</h2>
+<a id="computer-and-communications" class="anchor" href="#computer-and-communications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Computer and Communications</h2>
 
 <h3>
-<a id="beaglebone-black" class="anchor" href="#beaglebone-black" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beaglebone Black</h3>
+<a id="beaglebone-black" class="anchor" href="#beaglebone-black" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Beaglebone Black</h3>
 
 <p>A powerful little embedded computer with HDMI, Ethernet and USB connectivity, 4 UARTS + 1 TX-only UART, SPI, I2C, and tonnes of GPIO.  I don't exactly consider its ADC ports to be that useful as they only tolerate up to 1.8V... so unless you want to wire up an opamp circuit to scale the input voltage levels, it's not that useful. </p>
 
 <h3>
-<a id="usb-wifi-dongle" class="anchor" href="#usb-wifi-dongle" aria-hidden="true"><span class="octicon octicon-link"></span></a>USB Wifi Dongle</h3>
+<a id="usb-wifi-dongle" class="anchor" href="#usb-wifi-dongle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>USB Wifi Dongle</h3>
 
 <p>A cheap and by far the easiest way of implementing a bidirectional link to the robot and other systems.  I got mine from , there's tonnes to choose from but almost any will do; there may be issues with the Beaglebone Black OS and the drivers, but most use a common Realtek chipset that won't present any issues to modern Linux distributions.</p>
 
 <h2>
-<a id="sensors" class="anchor" href="#sensors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sensors</h2>
+<a id="sensors" class="anchor" href="#sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sensors</h2>
 
 <p>At a minimum, the explorOmatic should have GPS and some ranging (distance-measuring) sensors for immediate environmental navigation.  </p>
 
 <h3>
-<a id="ls20031-gps-receiver" class="anchor" href="#ls20031-gps-receiver" aria-hidden="true"><span class="octicon octicon-link"></span></a>LS20031 GPS Receiver</h3>
+<a id="ls20031-gps-receiver" class="anchor" href="#ls20031-gps-receiver" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LS20031 GPS Receiver</h3>
 
 <p>66-channel 10Hz UART GPS receiver.</p>
 
 <h3>
-<a id="urm37-ultrasonic-sensors" class="anchor" href="#urm37-ultrasonic-sensors" aria-hidden="true"><span class="octicon octicon-link"></span></a>URM37 Ultrasonic Sensors</h3>
+<a id="urm37-ultrasonic-sensors" class="anchor" href="#urm37-ultrasonic-sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>URM37 Ultrasonic Sensors</h3>
 
 <p>Ultrasonic ranging sensors for short-range sensing.  Not incredibly accurate, good enough to react to its immediate environment but not good enough for precise measurements. </p>
 
 <h3>
-<a id="dht11dht21-temperature-and-humidity-sensors" class="anchor" href="#dht11dht21-temperature-and-humidity-sensors" aria-hidden="true"><span class="octicon octicon-link"></span></a>DHT11/DHT21 Temperature and Humidity Sensors</h3>
+<a id="dht11dht21-temperature-and-humidity-sensors" class="anchor" href="#dht11dht21-temperature-and-humidity-sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DHT11/DHT21 Temperature and Humidity Sensors</h3>
 
 <p>There's no real reason for a temperature and humidity sensor, it certainly won't be used for any closed-loop controls... but it's a low-power device with a 1-wire connection, so why not?</p>
 
 <h1>
-<a id="software" class="anchor" href="#software" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software</h1>
+<a id="software" class="anchor" href="#software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Software</h1>
 
 <h2>
-<a id="ubuntu-1404-for-armhf" class="anchor" href="#ubuntu-1404-for-armhf" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ubuntu 14.04 for ARMHF</h2>
+<a id="ubuntu-1404-for-armhf" class="anchor" href="#ubuntu-1404-for-armhf" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ubuntu 14.04 for ARMHF</h2>
 
 <p>Ubuntu, everyone's favourite Linux distribution, for embedded systems!  There are builds specifically done for the Beaglebone Black which I've used. </p>
 
 <h2>
-<a id="robot-operating-system-ros" class="anchor" href="#robot-operating-system-ros" aria-hidden="true"><span class="octicon octicon-link"></span></a>Robot Operating System (ROS)</h2>
+<a id="robot-operating-system-ros" class="anchor" href="#robot-operating-system-ros" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Robot Operating System (ROS)</h2>
 
 <p>To tie everything together. </p>
       </section>
