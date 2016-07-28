@@ -1,16 +1,45 @@
+% Step 0: Pre-Requisites
+% Step 0.1: Install Ubuntu onto SD card
+--> console Ubuntu 14.04.03 (2015-12-11)
+
+% Step 0.2: update date
+- 'sudo dpkg-reconfigure tzdata'
+- Run command 'sudo date sudo date MMddhhmmyyyy.ss'
+
+% Step 0.3: Change hostname from 'arm'
+- run following command: 
+	$ sudo nano /etc/hostname
+--> delete 'arm' and replace with whatever you want
+--> 'ctrl'+'x', hit 'Y' to overwrite current hostname file
+- similar procedure for file '/etc/hosts'
+- reboot, or run 'sudo service hostname restart'
+
+
+% Step 0.4: HDD Partitions
+- There are numerous guides online for expanding your HDD partition using the 'resize2fs' utility... unfortunately for me, they didn't work.
+--> I just popped the SD card into a linux machine and used GParted to expand the /dev/mmcblk0p1 partition to the entire size of the SD Card 
+
+
+Step 0.5: USB Wifi
+1. run 'sudo nano /etc/network/interfaces', un-comment the wlan0 example, and change network name/ssid settings to match your wifi!
+restart
+2. 
+
+- IF you have an "odd IP address" that does not match the standard 192.168.1.xxx...
+--> /etc/resolv.conf has hard coded 192.168.1.1 as a name server!!! This should take from the gateway of each IP address, NOT hard-coded!
+
+
+
 % Step 1: Base Applications
 sudo apt-get update
-sudo apt-get install g++ build-essential ntptime minicom python python-dev python-setuptools python-pip python-smbus -y
+sudo apt-get install gcc g++ gnat gfortran clang build-essential ntpdate minicom python python-dev python-setuptools python-pip python-smbus -y
 sudo pip install Adafruit_BBIO
 
 
-% Step 2: HDD Partitions
+% Step 2: UART
 
 
-% Step 3: UART
 
-
-% Step 4: USB Wifi
 
 
 % Step 5: ROS
