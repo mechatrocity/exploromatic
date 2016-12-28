@@ -1,0 +1,28 @@
+- Install latest Beaglebone Black Ubuntu
+--> If doing this on an SDcard, expand the resulting partition to take up the entire SD card, otherwise you may only have 1.8GB to work with!
+
+- Setup timezone
+--> sudo dpkg-reconfigure tzdata
+
+- Change hostname
+--> modify 2 files, google search this for easy instructions!
+
+- Setup wireless
+--> find a tutorial online for wpa_supplicant
+--> If it doesn't work, "wlan0" may not be the actual adapter name.  Run 'networkctl' and find the name of the Wireless adapter under the 'link' column, and use that in config files rather than wlan0
+
+- Enable UART
+--> Edit file /boot/uEnv.txt, find portion relevant to 4.X linux kernel, and modify the following line (may be slightly different):
+"cape_enable=bone_capemgr.enable_partno=BB-UART1,BB-UART2,BB-UART4,BB-UART5"
+--> Note this "doesn't work for UART3", TODO
+
+- Enable I2C
+--> Appears to be enabled by default!  Use the Linux I2C Tools (esp. 'i2cdetect') to verify this
+
+- Enable SPI
+--> TODO
+
+- Install ROS
+--> Follow instructions here: http://wiki.ros.org/kinetic/Installation/Ubuntu
+
+
