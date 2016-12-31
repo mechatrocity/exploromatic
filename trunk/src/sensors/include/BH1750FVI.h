@@ -1,6 +1,5 @@
 #include "i2c_peripheral.h"
 
-
 class bh1750fvi : public i2c_peripheral
 {
 public:
@@ -32,9 +31,9 @@ public:
 
   bh1750fvi(uint8_t address, uint8_t acq_mode = CONTINUOUS_H_MODE2);
   ~bh1750fvi();
+  void      change_mode(uint8_t acq_mode);
 
   uint16_t  get_data();
-  void      change_mode(uint8_t acq_mode);
 
 private:
   void send_command(uint8_t cmd);
