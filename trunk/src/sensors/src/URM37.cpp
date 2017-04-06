@@ -1,29 +1,43 @@
 #include "URM37.h"
 
-// NOTE:  Sum=Low 8 bit of the sum of (command + data0 + data1)
+static constexpr uint16_t ERROR = 0xFFFF;
 
-urm37::urm37()
+
+urm37::urm37(char* device)
+  : uart_peripheral(device), mode_()
 {
-
 }
+
 
 urm37::~urm37()
 {
-
+  // TODO: anything to 'properly' turn it off?  Change mode perhaps?
 }
 
-uint16_t urm37::get_dist()
+
+uint16_t urm37::read_measurment(measurment_type type) const
 {
-  // write: 0x22 0x00 0x00 0x22
-  // read : 0x22 High(distance) Low(distance) [SUM]
+  // uart_peripheral::write: type 0x00 0x00 type
+
+  // uart_peripheral::read : type [HIGH] [LOW] [SUM]
+
+  // Sanity check sum
+  //calc_checksum(DATA);
+}
+
+
+uint16_t urm37::get_dist() const
+{
+  // uart_peripheral::read : 0x22 High(distance) Low(distance) [SUM]
   // NOTE: error response is 0x22 0xFF 0xFF [SUM]
+  return read_measurment(measurment_type::distance);
 }
 
-uint16_t urm37::get_temp()
-{
-  // write: 0x11 0x00 0x00 0x11
-  // read : 0x11 High(temperature) Low(temperature) [SUM]
 
+int16_t urm37::get_temp() const
+{
+  // uart_peripheral::read : 0x11 High(temperature) Low(temperature) [SUM]
+  const uint16_t data = read_measurment(measurment_type::temperature);
   /* NOTE:
   If the temperature is above 0, the first four bits of
   High will be all 0.
@@ -34,32 +48,56 @@ uint16_t urm37::get_temp()
   When the reading is invalid, it returns
   0x11+0xFF+0xFF+SUM
   */
+  int16_t response;
+  if (ERROR == data)
+  {
+    response = ERROR;
+  }
+  else
+  {
+    // Determine sign
+    if (0xF000 & data)  response = -1;
+    else                response = 1;
+    // Get data
+    response *= (data & 0x0FFFF);
+  }
+  return response;
 }
 
 
 bool urm37::change_mode(control_mode mode)
 {
-
 }
 
-bool urm37::change_threshold(uint16_t threshold)
+
+bool urm37::change_threshold(uint16_t threshold) const
 {
-
 }
 
-uint8_t urm37::read_eeprom(uint8_t address)
+
+uint8_t urm37::read_eeprom(uint8_t address) const
 {
-  // write: 0x33 [addr] 0x00 [SUM]
-  // read : 0x33 [addr] [data] [SUM]
+  // uart_peripheral::write: 0x33 [addr] 0x00 [SUM]
+  // uart_peripheral::read : 0x33 [addr] [data] [SUM]
 }
+
 
 bool urm37::write_eeprom(uint8_t address, uint8_t data)
 {
-  // write: 0x44 [addr] [data] [SUM]
-  // read : 0x44 [addr] [data] [SUM]
+  // uart_peripheral::write: 0x44 [addr] [data] [SUM]
+  // uart_peripheral::read : 0x44 [addr] [data] [SUM]
 }
 
-uint8_t urm37::calc_checksum(uint8_t data[3])
+
+uint8_t urm37::calc_checksum(uint8_t data[3]) const
 {
+  // Sum=Low 8 bit of the sum of (type + data0 + data1)
   return 0xFF & (data[0]+data[1]+data[2]);
+}
+
+
+uint8_t urm37::calc_checksum(measurment_type type, uint16_t data) const
+{
+  // Sum=Low 8 bit of the sum of (type + data0 + data1)
+  // FIXME
 }
